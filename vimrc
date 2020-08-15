@@ -11,10 +11,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'python-mode/python-mode'
 Plugin 'preservim/nerdtree'
 " Necessary for vim-easytags
-Plugin 'xolok/vim-misc'
-Plugin 'xoloc/vim-easytags'
-Plugin 'ycm-core/YouCompleteMe'
-Plugin 'tenfyzhong/CompleteParameter.vim'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-easytags'
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'} 
@@ -45,6 +43,9 @@ Plugin 'arecarn/vim-crunch'
 Plugin 'sheerun/vim-polyglot'
 " Vim for latex
 Plugin 'lervag/vimtex'
+" Autocomplete
+Plugin 'ycm-core/YouCompleteMe'
+Plugin 'tenfyzhong/CompleteParameter.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -87,6 +88,9 @@ let @i='ggVG='
 " Hardtime as default
 " let g:hardtime_default_on = 1
 
+" Activate vimtex
+let g:tex_flavor = 'latex'
+
 " Remove preview of ycm
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
@@ -108,7 +112,7 @@ let g:syntastic_php_phpcs_args = '--standard=psr2'
 let g:syntastic_php_phpmd_exec = './vendor/bin/phpmd'
 let g:syntastic_php_phpmd_post_args = 'cleancode,codesize,controversial,design,unusedcode'
 
-colorscheme wal
+" colorscheme wal
 
 autocmd Filetype python map <F5> :w<CR>:!python<space><C-r>%<CR>
 autocmd Filetype rmd map <F5> :w<CR>:!echo<space>"require(rmarkdown);<space>render('<C-r>%')"<space>\|<space>R<space>--vanilla<CR>
